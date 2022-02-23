@@ -1,4 +1,8 @@
-import { createStore } from 'redux';
-import reducer from './reducer';
+import { configureStore } from '@reduxjs/toolkit';
+import reducerSlice from './reducerSlice';
 
-export default createStore(reducer);
+export default configureStore({
+  reducer: {
+    quizvalues: reducerSlice,
+  },
+});

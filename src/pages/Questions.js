@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import useAxios from '../hooks/useAxios';
-import { handleScoreChange } from '../redux/actions';
+import { handleScoreChange } from '../redux/reducerSlice';
 
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
@@ -18,8 +18,8 @@ const Questions = () => {
     question_type,
     amount_of_question,
     score,
-  } = useSelector((state) => state);
-  let apiUrl = `/api.php?amount=10`;
+  } = useSelector((state) => state.quizvalues);
+  let apiUrl = `/api.php?amount=${amount_of_question}`;
 
   if (question_category) {
     apiUrl = apiUrl.concat(`&category=${question_category}`);

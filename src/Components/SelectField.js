@@ -6,7 +6,7 @@ import {
   handleDifficultyChange,
   handleTypeChange,
   handleCategoryChange,
-} from '../redux/actions';
+} from '../redux/reducerSlice';
 
 const SelectField = (props) => {
   const { label, options } = props;

@@ -3,10 +3,10 @@ import { Typography, Button } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { handleScoreChange, handleAmountChange } from '../redux/actions';
+import { handleScoreChange, handleAmountChange } from '../redux/reducerSlice';
 
 const FinalScreen = () => {
-  const { score } = useSelector((state) => state);
+  const { score } = useSelector((state) => state.quizvalues);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleBack = () => {
